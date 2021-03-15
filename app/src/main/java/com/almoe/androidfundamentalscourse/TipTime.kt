@@ -69,3 +69,4 @@ class TipTime : AppCompatActivity() {
         return false
     }
 }
+//end of class

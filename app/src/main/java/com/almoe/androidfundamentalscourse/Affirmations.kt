@@ -1,6 +1,8 @@
 package com.almoe.androidfundamentalscourse
 
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.almoe.androidfundamentalscourse.adapter.ItemAdapter
@@ -23,5 +25,11 @@ class Affirmations : AppCompatActivity() {
         // Use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView
         recyclerView.setHasFixedSize(true)
+    }
+
+    fun onCardClick(view: View) {
+        val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
+        val pos = recyclerView.getChildAdapterPosition(view)
+        Toast.makeText(this, "Material Card Clicked! $pos+1", Toast.LENGTH_SHORT).show()
     }
 }
